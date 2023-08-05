@@ -103,8 +103,8 @@ runButton.addEventListener("click", async () => {
 		console.log("service worker registered");
 
 		// Setup shiny app on webR VFS
-		webR.fs.unlink("/home/web_user/app/ui.R");
-		webR.fs.unlink("/home/web_user/app/server.R");
+		webR.FS.unlink("/home/web_user/app/ui.R");
+		webR.FS.unlink("/home/web_user/app/server.R");
 		await webR.FS.mkdir("/home/web_user/app");
 		await webR.FS.mkdir("/home/web_user/app/www");
 		await fetchToWebR(
