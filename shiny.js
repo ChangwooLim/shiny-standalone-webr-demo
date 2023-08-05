@@ -83,7 +83,7 @@ import("https://webr.r-wasm.org/latest/webr.mjs").then(async ({ WebR }) => {
 	// Upload file to webR filesystem
 	async function fetchToWebR(url, path) {
 		// const req = await fetch(url);
-		const req = `
+		const code = `
     # Define server logic required to draw a histogram ----
 server <- function(input, output) {
 
@@ -108,8 +108,10 @@ server <- function(input, output) {
 
 }
 `;
-		// const data = await req.arrayBuffer();
-		await webR.FS.writeFile(path, new Uint8Array(data));
+		const uint8ArrayCode = new Uint8Array(Buffer.from(code, "utf-8"));
+		await webR.FS.writeFile(path, uint8ArrayCode);
+		// const data = await req.arrayBuf fer();
+		// await webR.FS.writeFile(path, new Uint8Array(data));
 	}
 
 	// Register service worker
