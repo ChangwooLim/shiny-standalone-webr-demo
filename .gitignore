@@ -1,7 +1,1 @@
 serve.R
-.DS_Store
-repo/.DS_Store
-repo/bin/.DS_Store
-repo/bin/emscripten/.DS_Store
-repo/bin/emscripten/contrib/.DS_Store
-repo/src/.DS_Store
