@@ -103,20 +103,8 @@ runButton.addEventListener("click", async () => {
 		console.log("service worker registered");
 
 		// Setup shiny app on webR VFS
-		webR.fs.unlink("/home/web_user/app/ui.R", (err) => {
-			if (err) {
-				console.error("An error occurred while deleting the file:", err);
-				return;
-			}
-			console.log("File deleted successfully");
-		});
-		webR.fs.unlink("/home/web_user/app/server.R", (err) => {
-			if (err) {
-				console.error("An error occurred while deleting the file:", err);
-				return;
-			}
-			console.log("File deleted successfully");
-		});
+		webR.fs.unlink("/home/web_user/app/ui.R");
+		webR.fs.unlink("/home/web_user/app/server.R");
 		await webR.FS.mkdir("/home/web_user/app");
 		await webR.FS.mkdir("/home/web_user/app/www");
 		await fetchToWebR(
