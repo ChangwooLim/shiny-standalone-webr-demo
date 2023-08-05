@@ -116,11 +116,8 @@ runButton.addEventListener("click", async () => {
 		// await deleteFile("/home/web_user/app/ui.R");
 		// await deleteFile("/home/web_user/app/server.R");
 		console.log(uiCode.value, serverCode.value);
-		await webR.FS.unlink("/home/web_user/app/ui.R").catch((error) => {
-			console.log(error);
-		});
-		await webR.FS.unlink("/home/web_user/app/server.R").catch((error) => {
-			console.log(error);
+		await webR.FS.rmdir("/home/web_user/app").catch((err) => {
+			console.log(err);
 		});
 		await webR.FS.mkdir("/home/web_user/app");
 		await webR.FS.mkdir("/home/web_user/app/www");
