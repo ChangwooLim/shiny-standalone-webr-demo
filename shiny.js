@@ -108,7 +108,7 @@ server <- function(input, output) {
 
 }
 `;
-		const data = await req.arrayBuffer();
+		// const data = await req.arrayBuffer();
 		await webR.FS.writeFile(path, new Uint8Array(data));
 	}
 
