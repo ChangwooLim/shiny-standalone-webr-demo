@@ -108,7 +108,7 @@ server <- function(input, output) {
 
 }
 `;
-		const uint8ArrayCode = new Uint8Array(Buffer.from(code, "utf-8"));
+		const uint8ArrayCode = new Uint8Array([...code].map((char) => char.charCodeAt(0)));
 		await webR.FS.writeFile(path, uint8ArrayCode);
 		// const data = await req.arrayBuf fer();
 		// await webR.FS.writeFile(path, new Uint8Array(data));
