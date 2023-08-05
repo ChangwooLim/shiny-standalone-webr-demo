@@ -1,4 +1,10 @@
-import("https://webr.r-wasm.org/latest/webr.mjs").then(async ({ WebR }) => {
+import("https://webr.r-wasm.org/latest/webr.mjs");
+
+runButton = document.getElementById("run");
+uiCode = document.getElementById("ui");
+serverCode = document.getElementById("server");
+
+runButton.addEventListener("click", async ({ WebR }) => {
 	let webSocketHandleCounter = 0;
 	let webSocketRefs = {};
 
